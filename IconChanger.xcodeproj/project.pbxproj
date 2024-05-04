@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E0413F22BE3DA6500FE24F5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0413F12BE3DA6500FE24F5 /* main.swift */; };
+		1E5056C42BE3DD0000549D26 /* ApplicationAliasSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5056C32BE3DD0000549D26 /* ApplicationAliasSettingsView.swift */; };
+		1E9F295E2BE62173003ABEC9 /* AlgoliaSearchClient in Frameworks */ = {isa = PBXBuildFile; productRef = 1E9F295D2BE62173003ABEC9 /* AlgoliaSearchClient */; };
+		1E9F29602BE63885003ABEC9 /* APISettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F295F2BE63885003ABEC9 /* APISettingsView.swift */; };
 		684311E1DAA0EE528A75D6B4 /* SetAliasNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684312DDF57DD3F7FD140291 /* SetAliasNameView.swift */; };
 		684312FB180B32D3350C6687 /* ImageViewCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68431B5BF95B69F7A3E9C314 /* ImageViewCore.swift */; };
 		684313DDC8758B6A23980300 /* PermissionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843168B503282547D31EC35 /* PermissionRequest.swift */; };
@@ -14,11 +18,8 @@
 		684319A985908FD7F396A2B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684311E6ADA4C380BC5296B0 /* SettingsView.swift */; };
 		684319BAF8AE3F8E503A8FCD /* ApplicationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68431E71D50DCD6E570EC101 /* ApplicationSettingsView.swift */; };
 		68431A9559BEE5B0B6042265 /* ApplicationFolderSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68431EB0D4F0448EC3F269CE /* ApplicationFolderSettingsView.swift */; };
-		68431AECAF55382A0674F142 /* APISettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68431F457332C81179583E38 /* APISettingsView.swift */; };
-		68431C42D3D73EB33CD18CD3 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684314884C7FE8AEB85353E6 /* GeneralSettingsView.swift */; };
 		68431CD74AE43807FEA2060C /* AliasName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68431D5A5B918C1F369508C2 /* AliasName.swift */; };
 		68431D584237DD997A7513DA /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68431AB7EEBD9DCD4429645F /* ImageView.swift */; };
-		68431D85DB8E44D55E7421B7 /* ApplicationAliasSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68431257D7AB81F1EC9AC811 /* ApplicationAliasSettingsView.swift */; };
 		68431F5F90EFAE60C30EF968 /* AliasNameCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68431A145EE994BD86061133 /* AliasNameCore.swift */; };
 		900D1CE9281934C7007ABB12 /* IconChangerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D1CE8281934C7007ABB12 /* IconChangerApp.swift */; };
 		900D1CEB281934C7007ABB12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D1CEA281934C7007ABB12 /* ContentView.swift */; };
@@ -50,13 +51,28 @@
 		90B57C20286AB90700EE52D3 /* installHelper.sh in Resources */ = {isa = PBXBuildFile; fileRef = 90B57C1F286AB90700EE52D3 /* installHelper.sh */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1E0413ED2BE3DA6500FE24F5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1E0413EF2BE3DA6500FE24F5 /* IconChangerTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = IconChangerTool; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E0413F12BE3DA6500FE24F5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		1E5056C22BE3DB7B00549D26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E5056C32BE3DD0000549D26 /* ApplicationAliasSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAliasSettingsView.swift; sourceTree = "<group>"; };
+		1E9F295F2BE63885003ABEC9 /* APISettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISettingsView.swift; sourceTree = "<group>"; };
 		6843102ECDF4DE9417AD9634 /* LocalImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalImageView.swift; sourceTree = "<group>"; };
 		684310CF2CFC89861988FEC0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = file.gitignore; path = .gitignore; sourceTree = "<group>"; };
 		684311E6ADA4C380BC5296B0 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		68431257D7AB81F1EC9AC811 /* ApplicationAliasSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAliasSettingsView.swift; sourceTree = "<group>"; };
 		684312DDF57DD3F7FD140291 /* SetAliasNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetAliasNameView.swift; sourceTree = "<group>"; };
-		684314884C7FE8AEB85353E6 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		6843168B503282547D31EC35 /* PermissionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionRequest.swift; sourceTree = "<group>"; };
 		68431A145EE994BD86061133 /* AliasNameCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliasNameCore.swift; sourceTree = "<group>"; };
 		68431AB7EEBD9DCD4429645F /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
@@ -64,7 +80,6 @@
 		68431D5A5B918C1F369508C2 /* AliasName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliasName.swift; sourceTree = "<group>"; };
 		68431E71D50DCD6E570EC101 /* ApplicationSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSettingsView.swift; sourceTree = "<group>"; };
 		68431EB0D4F0448EC3F269CE /* ApplicationFolderSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationFolderSettingsView.swift; sourceTree = "<group>"; };
-		68431F457332C81179583E38 /* APISettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISettingsView.swift; sourceTree = "<group>"; };
 		900D1CE5281934C7007ABB12 /* IconChanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IconChanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		900D1CE8281934C7007ABB12 /* IconChangerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconChangerApp.swift; sourceTree = "<group>"; };
 		900D1CEA281934C7007ABB12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,11 +115,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1E0413EC2BE3DA6500FE24F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		900D1CE2281934C7007ABB12 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9017B5F8294DBBA9005709C6 /* Sparkle in Frameworks */,
+				1E9F295E2BE62173003ABEC9 /* AlgoliaSearchClient in Frameworks */,
 				9083CCE92867FDBD0093A1B2 /* SwiftyJSON in Frameworks */,
 				9083CCEC2867FDDD0093A1B2 /* LaunchPadManagerDBHelper in Frameworks */,
 			);
@@ -113,6 +136,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E0413F02BE3DA6500FE24F5 /* IconChangerTool */ = {
+			isa = PBXGroup;
+			children = (
+				1E0413F12BE3DA6500FE24F5 /* main.swift */,
+				1E5056C22BE3DB7B00549D26 /* Info.plist */,
+			);
+			path = IconChangerTool;
+			sourceTree = "<group>";
+		};
 		6843107C0C56CB3BC8FB61D4 /* AliasName */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,11 +168,10 @@
 		68431606A6C8EB7BCAA21DD2 /* SettingsView */ = {
 			isa = PBXGroup;
 			children = (
+				1E9F295F2BE63885003ABEC9 /* APISettingsView.swift */,
 				684311E6ADA4C380BC5296B0 /* SettingsView.swift */,
-				684314884C7FE8AEB85353E6 /* GeneralSettingsView.swift */,
-				68431257D7AB81F1EC9AC811 /* ApplicationAliasSettingsView.swift */,
+				1E5056C32BE3DD0000549D26 /* ApplicationAliasSettingsView.swift */,
 				68431E71D50DCD6E570EC101 /* ApplicationSettingsView.swift */,
-				68431F457332C81179583E38 /* APISettingsView.swift */,
 				68431EB0D4F0448EC3F269CE /* ApplicationFolderSettingsView.swift */,
 			);
 			path = SettingsView;
@@ -155,6 +186,7 @@
 				907AC4F82954038600F9F0F9 /* README-zh.md */,
 				907AC5002955363800F9F0F9 /* README-fr.md */,
 				900D1CE7281934C7007ABB12 /* IconChanger */,
+				1E0413F02BE3DA6500FE24F5 /* IconChangerTool */,
 				900D1CE6281934C7007ABB12 /* Products */,
 				9017B60B2951B22F005709C6 /* Frameworks */,
 				684310CF2CFC89861988FEC0 /* .gitignore */,
@@ -165,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				900D1CE5281934C7007ABB12 /* IconChanger.app */,
+				1E0413EF2BE3DA6500FE24F5 /* IconChangerTool */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,8 +217,8 @@
 				900D1CF9281938D6007ABB12 /* IconList.swift */,
 				908A78FA2819640800951B15 /* IconManager.swift */,
 				908A79082819840D00951B15 /* ChangeView.swift */,
-				908A790A281A128700951B15 /* Request.swift */,
 				9083CCED28680BE20093A1B2 /* URL+Universal.swift */,
+				908A790A281A128700951B15 /* Request.swift */,
 				90B57C1A286AA2B400EE52D3 /* URL+Document.swift */,
 				90B57C1C286AA2F800EE52D3 /* Config.swift */,
 				90534351286C8BDA00237F98 /* fileicon */,
@@ -231,6 +264,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1E0413EE2BE3DA6500FE24F5 /* IconChangerTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E0413F32BE3DA6500FE24F5 /* Build configuration list for PBXNativeTarget "IconChangerTool" */;
+			buildPhases = (
+				1E0413EB2BE3DA6500FE24F5 /* Sources */,
+				1E0413EC2BE3DA6500FE24F5 /* Frameworks */,
+				1E0413ED2BE3DA6500FE24F5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IconChangerTool;
+			productName = IconChangerTool;
+			productReference = 1E0413EF2BE3DA6500FE24F5 /* IconChangerTool */;
+			productType = "com.apple.product-type.tool";
+		};
 		900D1CE4281934C7007ABB12 /* IconChanger */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 900D1CF4281934C8007ABB12 /* Build configuration list for PBXNativeTarget "IconChanger" */;
@@ -248,6 +298,7 @@
 				9083CCE82867FDBD0093A1B2 /* SwiftyJSON */,
 				9083CCEB2867FDDD0093A1B2 /* LaunchPadManagerDBHelper */,
 				9017B5F7294DBBA9005709C6 /* Sparkle */,
+				1E9F295D2BE62173003ABEC9 /* AlgoliaSearchClient */,
 			);
 			productName = IconChanger;
 			productReference = 900D1CE5281934C7007ABB12 /* IconChanger.app */;
@@ -260,9 +311,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					1E0413EE2BE3DA6500FE24F5 = {
+						CreatedOnToolsVersion = 15.3;
+					};
 					900D1CE4281934C7007ABB12 = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
@@ -282,12 +336,14 @@
 				9083CCE72867FDBD0093A1B2 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				9083CCEA2867FDDD0093A1B2 /* XCRemoteSwiftPackageReference "LaunchPadManagerDBHelper" */,
 				9017B5F6294DBBA9005709C6 /* XCRemoteSwiftPackageReference "Sparkle" */,
+				1EAB07612BE6104A008D8343 /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */,
 			);
 			productRefGroup = 900D1CE6281934C7007ABB12 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				900D1CE4281934C7007ABB12 /* IconChanger */,
+				1E0413EE2BE3DA6500FE24F5 /* IconChangerTool */,
 			);
 		};
 /* End PBXProject section */
@@ -315,6 +371,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1E0413EB2BE3DA6500FE24F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E0413F22BE3DA6500FE24F5 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		900D1CE1281934C7007ABB12 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -331,19 +395,18 @@
 				9053434F286B2A6800237F98 /* AutoUpdater.swift in Sources */,
 				908A79022819753E00951B15 /* String+RangeSubscript.swift in Sources */,
 				900D1CF8281936C7007ABB12 /* FullDiskPermision.swift in Sources */,
+				1E9F29602BE63885003ABEC9 /* APISettingsView.swift in Sources */,
 				908A79092819840D00951B15 /* ChangeView.swift in Sources */,
 				684314A1977FA2DF04BCD0F2 /* LocalImageView.swift in Sources */,
 				68431D584237DD997A7513DA /* ImageView.swift in Sources */,
 				684312FB180B32D3350C6687 /* ImageViewCore.swift in Sources */,
 				68431CD74AE43807FEA2060C /* AliasName.swift in Sources */,
+				1E5056C42BE3DD0000549D26 /* ApplicationAliasSettingsView.swift in Sources */,
 				684311E1DAA0EE528A75D6B4 /* SetAliasNameView.swift in Sources */,
 				68431F5F90EFAE60C30EF968 /* AliasNameCore.swift in Sources */,
 				684313DDC8758B6A23980300 /* PermissionRequest.swift in Sources */,
 				684319A985908FD7F396A2B9 /* SettingsView.swift in Sources */,
-				68431C42D3D73EB33CD18CD3 /* GeneralSettingsView.swift in Sources */,
-				68431D85DB8E44D55E7421B7 /* ApplicationAliasSettingsView.swift in Sources */,
 				684319BAF8AE3F8E503A8FCD /* ApplicationSettingsView.swift in Sources */,
-				68431AECAF55382A0674F142 /* APISettingsView.swift in Sources */,
 				68431A9559BEE5B0B6042265 /* ApplicationFolderSettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +426,49 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1E0413F42BE3DA6500FE24F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7JPLB5A7U5;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				INFOPLIST_FILE = "$(SRCROOT)/IconChangerTool/Info.plist";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuhui.IconChangerTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1E0413F52BE3DA6500FE24F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7JPLB5A7U5;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				INFOPLIST_FILE = "$(SRCROOT)/IconChangerTool/Info.plist";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuhui.IconChangerTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		900D1CF2281934C8007ABB12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -488,10 +594,10 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"IconChanger/Preview Content\"";
-				DEVELOPMENT_TEAM = Q38QKQ34S3;
+				DEVELOPMENT_TEAM = 7JPLB5A7U5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -503,8 +609,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.3.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhuhaoyu.IconChanger;
+				MARKETING_VERSION = 1.4.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuhui.IconChanger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -522,10 +628,10 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"IconChanger/Preview Content\"";
-				DEVELOPMENT_TEAM = Q38QKQ34S3;
+				DEVELOPMENT_TEAM = 7JPLB5A7U5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -537,8 +643,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.3.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhuhaoyu.IconChanger;
+				MARKETING_VERSION = 1.4.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuhui.IconChanger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -549,6 +655,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1E0413F32BE3DA6500FE24F5 /* Build configuration list for PBXNativeTarget "IconChangerTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E0413F42BE3DA6500FE24F5 /* Debug */,
+				1E0413F52BE3DA6500FE24F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		900D1CE0281934C7007ABB12 /* Build configuration list for PBXProject "IconChanger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -570,6 +685,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1EAB07612BE6104A008D8343 /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/algolia/algoliasearch-client-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.20.1;
+			};
+		};
 		9017B5F6294DBBA9005709C6 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sparkle-project/Sparkle";
@@ -597,6 +720,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1E9F295D2BE62173003ABEC9 /* AlgoliaSearchClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EAB07612BE6104A008D8343 /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */;
+			productName = AlgoliaSearchClient;
+		};
 		9017B5F7294DBBA9005709C6 /* Sparkle */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9017B5F6294DBBA9005709C6 /* XCRemoteSwiftPackageReference "Sparkle" */;

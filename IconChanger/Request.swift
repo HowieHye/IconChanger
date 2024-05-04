@@ -8,7 +8,7 @@
 
 import Foundation
 import AppKit
-import SwiftyJSON
+import AlgoliaSearchClient
 
 class MyRequestController {
     func sendRequest(_ URL: URL) async throws -> NSImage? {
@@ -56,68 +56,53 @@ class MyRequestController {
 }
 
 class MyQueryRequestController {
+    private var client: SearchClient!
+    private var index: Index!
+
+    init() {
+        // 初始化Algolia客户端和索引
+        let appId = ApplicationID(rawValue: UserDefaults.standard.string(forKey: "appID") ?? "P1TXH7ZFB3")
+        let apiKey = APIKey(rawValue: UserDefaults.standard.string(forKey: "apiKey") ?? "766fcf8cd4746fa79b3d99852cfe8027")
+        client = SearchClient(appID: appId, apiKey: apiKey)
+        index = client.index(withName: "macOSicons")
+    }
+
     func sendRequest(_ query: String) async throws -> [IconRes] {
-        /* Configure session, choose between:
-         * defaultSessionConfiguration
-         * ephemeralSessionConfiguration
-         * backgroundSessionConfigurationWithIdentifier:
-         And set session-wide properties, such as: HTTPAdditionalHeaders,
-         HTTPCookieAcceptPolicy, requestCachePolicy or timeoutIntervalForRequest.
-         */
         let query = qeuryMix(query)
+        
+        var searchQuery = Query(query)
+        searchQuery.hitsPerPage = 100
+        searchQuery.filters = "approved:true"
+        searchQuery.page = 0
+        do {
+            let searchResult: SearchResponse = try await index.search(query: searchQuery)
+            let res: [IconRes] = searchResult.hits.compactMap { hit in
+                if case let .string(lowResPngUrlValue) = hit.object["lowResPngUrl"],
+                   let lowResPngUrl = URL(string: lowResPngUrlValue),
+                   case let .string(icnsUrlValue) = hit.object["icnsUrl"],
+                   let icnsUrl = URL(string: icnsUrlValue),
+                   case let .string(appName) = hit.object["appName"],
+                   case let .number(downloadsNumber) = hit.object["downloads"],
+                   let downloads = Int(exactly: downloadsNumber) {
+                    return IconRes(appName: appName, icnsUrl: icnsUrl, lowResPngUrl: lowResPngUrl, downloads: downloads)
+                } else {
+                    print("Error parsing hit: \(hit)")
+                    return nil
+                }
+            }
 
-        let sessionConfig = URLSessionConfiguration.default
-
-        /* Create session, and optionally set a URLSessionDelegate. */
-        let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
-
-        /* Create the Request:
-         Request (POST https://p1txh7zfb3-3.algolianet.com/1/indexes/macOSicons/query)
-         */
-
-        guard let URL = URL(string: "https://\(UserDefaults.standard.string(forKey: "queryHost") ?? "p1txh7zfb3-2.algolianet.com")/1/indexes/macOSicons/query") else { return [] }
-        var request = URLRequest(url: URL)
-        request.httpMethod = "POST"
-
-        // Headers
-        request.addValue("P1TXH7ZFB3", forHTTPHeaderField: "x-algolia-application-id")
-        request.addValue("0ba04276e457028f3e11e38696eab32c", forHTTPHeaderField: "x-algolia-api-key")
-        request.addValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15", forHTTPHeaderField: "User-Agent")
-        request.addValue("https://macosicons.com", forHTTPHeaderField: "Origin")
-
-        // Form URL-Encoded Body
-
-        let bodyObject: [String : Any] = [
-            "hitsPerPage": 100,
-            "query": query,
-            "filters": "approved:true",
-            "page": 0
-        ]
-        request.httpBody = try! JSONSerialization.data(withJSONObject: bodyObject, options: [])
-
-        let (data, response) = try await session.data(for: request)
-
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            return res
+                .filter {
+                    $0.appName.lowercased().replacingOccurrences(of: " ", with: "").contains(query.lowercased().replacingOccurrences(of: " ", with: ""))
+                }
+                .sorted { res1, res2 in
+                    res1.downloads > res2.downloads
+                }
+            
+        } catch {
+            print("Error during search: \(error)")
             return []
         }
-
-        let json = try JSON(data: data)
-        let res = json["hits"].arrayValue.compactMap { hit in
-            if let lowResPngUrl = hit["lowResPngUrl"].url, let icnsUrl = hit["icnsUrl"].url {
-                return IconRes(appName: hit["appName"].stringValue, icnsUrl: icnsUrl, lowResPngUrl: lowResPngUrl, downloads: hit["downloads"].intValue)
-            } else {
-                return nil
-            }
-        }
-
-        return res
-            .filter {
-                // TODO: Improve it (remove (),':) Photoshop (Beta) -> Photoshop Beta
-                $0.appName.lowercased().replace(target: " ", withString: "").contains(query.lowercased().replace(target: " ", withString: ""))
-            }
-            .sorted { res1, res2 in
-                res1.downloads > res2.downloads
-            }
     }
 
     func qeuryMix(_ query: String) -> String {
@@ -128,41 +113,3 @@ class MyQueryRequestController {
         }
     }
 }
-
-
-protocol URLQueryParameterStringConvertible {
-    var queryParameters: String {get}
-}
-
-extension Dictionary : URLQueryParameterStringConvertible {
-    /**
-     This computed property returns a query parameters string from the given NSDictionary. For
-     example, if the input is @{@"day":@"Tuesday", @"month":@"January"}, the output
-     string will be @"day=Tuesday&month=January".
-     @return The computed parameters string.
-     */
-    var queryParameters: String {
-        var parts: [String] = []
-        for (key, value) in self {
-            let part = String(format: "%@=%@",
-                              String(describing: key).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!,
-                              String(describing: value).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
-            parts.append(part as String)
-        }
-        return parts.joined(separator: "&")
-    }
-
-}
-
-extension URL {
-    /**
-     Creates a new URL by adding the given query parameters.
-     @param parametersDictionary The query parameter dictionary to add.
-     @return A new URL.
-     */
-    func appendingQueryParameters(_ parametersDictionary : Dictionary<String, String>) -> URL {
-        let URLString : String = String(format: "%@?%@", self.absoluteString, parametersDictionary.queryParameters)
-        return URL(string: URLString)!
-    }
-}
-

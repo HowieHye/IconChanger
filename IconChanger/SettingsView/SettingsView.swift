@@ -7,26 +7,25 @@
 //
 
 import SwiftUI
+import Cocoa
 
 struct SettingsView: View {
     var body: some View {
         TabView {
-//            GeneralSettingsView()
-//                    .tabItem {
-//                        Label("General", systemImage: "gearshape")
-//                    }
             ApplicationSettingsView()
                     .tabItem {
-                        Label("Application", systemImage: "app")
+                        Label("Applications", systemImage: "app")
                     }
             APISettingsView()
-                    .tabItem {
-                        Label("Api", systemImage: "bolt")
-                    }
+                .tabItem {
+                    Label("API", systemImage: "bolt")
+                }
         }
                 .padding()
                 .frame(width: 500, height: 400)
     }
 }
 
-
+#Preview {
+    SettingsView()
+}
