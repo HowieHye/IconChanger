@@ -40,6 +40,7 @@ struct ContentView: View {
                 VStack(alignment: .leading) {
                     Text("1. A dialog will appear requesting access to /Applications")
                     Text("2. Please choose /Applications and click OK")
+//                    TODO: APP 管理的权限
                 }
                         .multilineTextAlignment(.leading)
 

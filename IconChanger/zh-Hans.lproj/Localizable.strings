@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  IconChanger
+
+  Created by 朱浩宇 on 2022/12/23.
+  
+*/
+
+"Unknown" = "未知";
+"We Need Full Disk Access" = "我们需要完全磁盘访问权限";
+"1. Open the System Setting App" = "1. 打开系统设置应用程序";
+"2. Go to the security" = "2. 打开隐私与安全";
+"3. Choose the Full Disk Access" = "3. 选择完全磁盘访问权限";
+"4. Unlock it" = "4. 解锁";
+"5. Choose or add the IconChanger" = "5. 选择或添加IconChanger";
+"6. Check the check box" = "6. 选中复选框";
+"Check the Access Permition" = "检查访问权限";
+"Copy the Name" = "复制名称";
+"Path" = "路径";
+"Copy" = "复制";
+"Copy the Path Name" = "复制路径名称";
+"Show in the Finder" = "在Finder中显示";
+"Set the Alias" = "设置别名";
+"Remove the Icon from the Launchpad" = "从Launchpad中删除图标";
+"macOSIcon" = "macOSIcon"; // This is the name of the website. Maybe you can keep it.
+"Local" = "本地";
+"Cancel" = "取消";
+"Choose from the Local" = "从本地选择";
+"Api" = "Api";
+"Query Host: " = "Query Host: ";
+"Finish" = "结束";
+"We Need Access to /Applications" = "我们需要访问 /Applications";
+"1. A dialog will appear requesting access to /Applications" = "1. 将出现一个对话框，请求访问 /Applications";
+"2. Please choose /Applications and click OK" = "2. 请选择 /Applications 并单击确定";
+"Request Access" = "申请访问权限";
