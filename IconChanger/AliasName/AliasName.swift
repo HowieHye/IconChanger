@@ -21,19 +21,19 @@ struct AliasNameOld {
         "Adobe Illustrator 2023": "Illustrator",
         "PyCharm Community": "PyCharm",
     ]
-
+    
     static func getNames() -> [String: String] {
         if let data = UserDefaults.standard.data(forKey: "AliasName") {
             return names + ((try? JSONDecoder().decode([String: String].self, from: data)) ?? [:])
         }
-
+        
         return names
     }
-
+    
     static func getNames(for raw: String) -> String? {
         return getNames()[raw]
     }
-
+    
     static func setName(_ name: String, for raw: String) {
         do {
             if let data = UserDefaults.standard.data(forKey: "AliasName"), var names = try? JSONDecoder().decode([String: String].self, from: data) {
@@ -45,10 +45,10 @@ struct AliasNameOld {
         } catch {
             print(error)
         }
-
+        
         UserDefaults.standard.synchronize()
     }
-
+    
     static func setEmpty(for raw: String) {
         do {
             if let data = UserDefaults.standard.data(forKey: "AliasName"), var names = try? JSONDecoder().decode([String: String].self, from: data) {
@@ -58,7 +58,7 @@ struct AliasNameOld {
         } catch {
             print(error)
         }
-
+        
         UserDefaults.standard.synchronize()
     }
 }

@@ -22,7 +22,7 @@ struct ContentView: View {
                         } else {
                             try? await Task.sleep(nanoseconds: NSEC_PER_SEC)
                         }
-
+                        
                         do {
                             try iconManager.installHelperTool()
                             helperToolVersion = Config.helperToolVersion
@@ -34,20 +34,20 @@ struct ContentView: View {
         } else {
             VStack {
                 Text("We Need Access to /Applications")
-                        .font(.largeTitle.bold())
-                        .padding()
-
+                    .font(.largeTitle.bold())
+                    .padding()
+                
                 VStack(alignment: .leading) {
                     Text("1. A dialog will appear requesting access to /Applications")
                     Text("2. Please choose /Applications and click OK")
-//                    TODO: APP 管理的权限
+                    //                    TODO: APP 管理的权限
                 }
-                        .multilineTextAlignment(.leading)
-
+                .multilineTextAlignment(.leading)
+                
                 Button("Request Access") {
                     folderPermission.check()
                 }
-                        .padding()
+                .padding()
             }
         }
     }
@@ -60,7 +60,7 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 extension NSWorkspace {
-
+    
     enum SystemServiceType: String {
         case privacy = "x-apple.systempreferences:com.apple.preference.security?Privacy"
         case camera = "x-apple.systempreferences:com.apple.preference.security?Privacy_Camera"
@@ -72,7 +72,7 @@ extension NSWorkspace {
         case photos = "x-apple.systempreferences:com.apple.preference.security?Privacy_Photos"
         case fullDisk = "x-apple.systempreferences:com.apple.preference.security?Privacy_AllFiles"
     }
-
+    
     func openLocationService(for type: SystemServiceType) {
         let url = URL(string: type.rawValue)!
         NSWorkspace.shared.open(url)

@@ -13,16 +13,16 @@ struct ImageView: View {
     let icon: IconRes
     let setPath: LaunchPadManagerDBHelper.AppInfo
     @State var preview: NSImage?
-
+    
     var body: some View {
         ImageViewCore(nsimage: $preview, setPath: setPath)
-                .task {
-                    do {
-                        preview = try await MyRequestController().sendRequest(icon.lowResPngUrl)
-                    } catch {
-                        print(error)
-                    }
+            .task {
+                do {
+                    preview = try await MyRequestController().sendRequest(icon.lowResPngUrl)
+                } catch {
+                    print(error)
                 }
+            }
     }
 }
 

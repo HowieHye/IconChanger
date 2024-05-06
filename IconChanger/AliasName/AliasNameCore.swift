@@ -11,17 +11,17 @@ struct AliasName: Identifiable {
     let id: String // Swift requires the `id` to conform to the `Identifiable` protocol
     var appName: String
     var aliasName: String // This property is now mutable
-
+    
     init(appName: String, aliasName: String) {
         self.id = appName // We use `appName` as the `id` because it is unique
         self.appName = appName
         self.aliasName = aliasName
     }
-
+    
     static func getName(for raw: String) -> String? {
         return AliasNames.getAll().first(where: { $0.appName == raw })?.aliasName
     }
-
+    
     static func setName(_ name: String, for raw: String) {
         var aliases = AliasNames.getAll()
         if let index = aliases.firstIndex(where: { $0.appName == raw }) {
@@ -31,7 +31,7 @@ struct AliasName: Identifiable {
         }
         AliasNames.save(aliases)
     }
-
+    
     static func setEmpty(for raw: String) {
         var aliases = AliasNames.getAll()
         aliases.removeAll(where: { $0.appName == raw })
@@ -49,7 +49,7 @@ struct AliasNames {
         }
         return []
     }
-
+    
     static func save(_ aliasNames: [AliasName]) {
         let aliasDict = aliasNames.reduce(into: [String: String]()) {
             $0[$1.appName] = $1.aliasName

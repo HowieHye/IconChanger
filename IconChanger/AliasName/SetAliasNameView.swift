@@ -12,33 +12,33 @@ struct SetAliasNameView: View {
     let raw: String
     let lastText: String
     @State var text = ""
-
+    
     @Environment(\.presentationMode) var presentationMode
-
+    
     var body: some View {
         VStack {
             TextField(raw, text: $text)
-                    .frame(width: 350)
-                    .padding()
+                .frame(width: 350)
+                .padding()
         }
-                .onAppear {
-                    if !lastText.isEmpty && lastText != raw {
-                        text = lastText
+        .onAppear {
+            if !lastText.isEmpty && lastText != raw {
+                text = lastText
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .confirmationAction) {
+                Button("Finish") {
+                    if text.isEmpty {
+                        AliasName.setEmpty(for: raw)
+                    } else {
+                        AliasName.setName(text, for: raw)
                     }
+                    
+                    presentationMode.wrappedValue.dismiss()
                 }
-                .toolbar {
-                    ToolbarItem(placement: .confirmationAction) {
-                        Button("Finish") {
-                            if text.isEmpty {
-                                AliasName.setEmpty(for: raw)
-                            } else {
-                                AliasName.setName(text, for: raw)
-                            }
-
-                            presentationMode.wrappedValue.dismiss()
-                        }
-                    }
-                }
+            }
+        }
     }
 }
 
@@ -56,10 +56,10 @@ func setupDefaultAliasNames() {
         "Adobe Illustrator 2023": "Illustrator",
         "PyCharm Community": "PyCharm",
     ]
-
+    
     if let data = UserDefaults.standard.data(forKey: "AliasName"),
        var storedAlias = try? JSONDecoder().decode([String: String].self, from: data) {
-
+        
         for (key, value) in defaultAlias {
             if storedAlias[key] == nil {
                 storedAlias[key] = value

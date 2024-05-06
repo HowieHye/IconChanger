@@ -1,10 +1,10 @@
 /* 
-  Localizable.strings
-  IconChanger
-
-  Created by 朱浩宇 on 2022/12/23.
-  
-*/
+ Localizable.strings
+ IconChanger
+ 
+ Created by 朱浩宇 on 2022/12/23.
+ 
+ */
 
 "Unknown" = "Inconnu";
 "We Need Full Disk Access" = "IconChanger a besoin d'un accès complet au disque";

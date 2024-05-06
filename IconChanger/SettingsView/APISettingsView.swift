@@ -11,29 +11,29 @@ import WebKit
 struct WebView: NSViewRepresentable {
     var url: URL
     var onReceivedValues: ((String, String) -> Void)?  // 添加一个回调闭包来传递解析的值
-
+    
     func makeNSView(context: Context) -> WKWebView {
         let webView = WKWebView()
         webView.navigationDelegate = context.coordinator
         return webView
     }
-
+    
     func updateNSView(_ nsView: WKWebView, context: Context) {
         let request = URLRequest(url: url)
         nsView.load(request)
     }
-
+    
     func makeCoordinator() -> Coordinator {
         Coordinator(onReceivedValues: onReceivedValues)
     }
-
+    
     class Coordinator: NSObject, WKNavigationDelegate {
         var onReceivedValues: ((String, String) -> Void)?  // 存储回调闭包
-
+        
         init(onReceivedValues: ((String, String) -> Void)?) {
             self.onReceivedValues = onReceivedValues
         }
-
+        
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
             let js = """
             document.querySelector('link[rel="modulepreload"][href*="IconDialog"]').getAttribute('href')
@@ -44,7 +44,7 @@ struct WebView: NSViewRepresentable {
                 print(href)
             }
         }
-
+        
         func downloadAndParseJavaScript(href: String) {
             guard let url = URL(string: href) else { return }
             let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
@@ -57,7 +57,7 @@ struct WebView: NSViewRepresentable {
             }
             task.resume()
         }
-
+        
         func parseJavaScriptContent(fileContent: String) {
             print(fileContent)
             let pattern = "y\\(\"([^\"]+)\",\"([^\"]+)\"\\);"
@@ -85,7 +85,7 @@ struct APISettingsView: View {
     @AppStorage("apiKey") private var apiKey: String = ""
     @State private var isLoading: Bool = false
     @State private var showWebView: Bool = false
-
+    
     var body: some View {
         VStack(spacing: 20) {
             VStack(alignment: .leading) {
@@ -123,7 +123,7 @@ struct APISettingsView: View {
                 }
             }
             .frame(height: 100)
-
+            
             Button("Fetch Data") {
                 isLoading = true
                 showWebView = true
@@ -134,7 +134,7 @@ struct APISettingsView: View {
         .padding()
         .frame(minWidth: 300, minHeight: 300)
     }
-
+    
     func showAlert(title: String, message: String) {
         let alert = NSAlert()
         alert.messageText = title

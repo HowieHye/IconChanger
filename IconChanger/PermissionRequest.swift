@@ -18,20 +18,20 @@ struct PermissionList: Identifiable {
 
 class FolderPermission: ObservableObject {
     static let shared = FolderPermission()
-
+    
     @Published var permissions: [PermissionList] = []
-
+    
     var bookmarkData: Data? {
         didSet {
             UserDefaults.standard.set(bookmarkData, forKey: "bookmarkData")
         }
     }
     var url: URL?
-
+    
     var hasPermission: Bool {
         hasPermissionForApplicationsFolder()
     }
-
+    
     init() {
         if let bookmarkData = UserDefaults.standard.data(forKey: "bookmarkData") {
             self.bookmarkData = bookmarkData
@@ -44,14 +44,14 @@ class FolderPermission: ObservableObject {
             }
         }
     }
-
+    
     func check() {
-//        print(permissions)
+        //        print(permissions)
         if !hasPermission {
             add()
         }
     }
-
+    
     func add() {
         let openPanel = NSOpenPanel()
         openPanel.directoryURL = URL(fileURLWithPath: "/Applications")
@@ -65,7 +65,7 @@ class FolderPermission: ObservableObject {
             }
         }
     }
-
+    
     func addBookmark(_ url: URL?) {
         guard let url = url else { return }
         if permissions.contains(where: { $0.bookmarkedURL == url.absoluteString }) {
@@ -81,42 +81,42 @@ class FolderPermission: ObservableObject {
             print("Error creating bookmark:", error)
         }
     }
-
+    
     func hasPermissionForApplicationsFolder() -> Bool {
         let safariAppURL = URL(fileURLWithPath: "/Applications/Safari.app/Contents/Info.plist")
         let fileManager = FileManager.default
         return fileManager.isReadableFile(atPath: safariAppURL.path)
     }
-
+    
     // 创建一个安全标签
     func createBookmark(from url: URL) throws -> Data {
         let bookmarkData = try url.bookmarkData(options: .withSecurityScope,
-                includingResourceValuesForKeys: nil,
-                relativeTo: nil)
+                                                includingResourceValuesForKeys: nil,
+                                                relativeTo: nil)
         return bookmarkData
     }
-
+    
     // 使用一个安全标签
     func accessBookmark(_ bookmarkData: Data) throws -> URL {
         var isStale = false
         let bookmarkedURL = try URL(resolvingBookmarkData: bookmarkData,
-                options: .withSecurityScope,
-                relativeTo: nil,
-                bookmarkDataIsStale: &isStale)
-
+                                    options: .withSecurityScope,
+                                    relativeTo: nil,
+                                    bookmarkDataIsStale: &isStale)
+        
         if isStale {
             // 书签数据已经过时，需要重新创建
             // ...
         }
-
+        
         if !bookmarkedURL.startAccessingSecurityScopedResource() {
             // 没有权限访问资源
             // ...
         }
-
+        
         return bookmarkedURL
     }
-
+    
     func removeBookmark() {
         guard !permissions.isEmpty else { return }
         permissions.removeLast()

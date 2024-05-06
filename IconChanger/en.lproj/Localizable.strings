@@ -1,10 +1,10 @@
 /* 
-  Localizable.strings
-  IconChanger
-
-  Created by 朱浩宇 on 2022/12/23.
-  
-*/
+ Localizable.strings
+ IconChanger
+ 
+ Created by 朱浩宇 on 2022/12/23.
+ 
+ */
 
 "Unknown" = "Unknown";
 "We Need Full Disk Access" = "We Need Full Disk Access";
