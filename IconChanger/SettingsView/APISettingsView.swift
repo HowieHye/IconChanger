@@ -84,7 +84,7 @@ struct APISettingsView: View {
     @AppStorage("appID") private var appID: String = ""
     @AppStorage("apiKey") private var apiKey: String = ""
     @State private var isLoading: Bool = false
-    @State private var showWebView: Bool = true
+    @State private var showWebView: Bool = false
 
     var body: some View {
         VStack(spacing: 20) {
