@@ -13,16 +13,20 @@ struct SettingsView: View {
     var body: some View {
         TabView {
             ApplicationSettingsView()
-                    .tabItem {
-                        Label("Applications", systemImage: "app")
-                    }
+                .tabItem {
+                    Label("Applications", systemImage: "app")
+                }
             APISettingsView()
                 .tabItem {
                     Label("API", systemImage: "bolt")
                 }
+            AboutView()
+                .tabItem {
+                    Label("About", systemImage: "info")
+                }
         }
-                .padding()
-                .frame(width: 500, height: 400)
+        .padding()
+        .frame(width: 500, height: 400)
     }
 }
 

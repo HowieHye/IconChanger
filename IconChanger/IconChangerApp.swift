@@ -11,29 +11,29 @@ import Sparkle
 
 @main
 struct IconChangerApp: App {
-//    @StateObject var fullDiskPermision = FullDiskPermision.shared
+    //    @StateObject var fullDiskPermision = FullDiskPermision.shared
     @StateObject var folderPermission = FolderPermission.shared
     private let updaterController: SPUStandardUpdaterController
-
+    
     init() {
         // If you want to start the updater manually, pass false to startingUpdater and call .startUpdater() later
         // This is where you can also pass an updater delegate if you need one
         updaterController = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
         setupDefaultAliasNames()
     }
-
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
-                    .frame(minWidth: folderPermission.hasPermission ? 900 : 500, minHeight: folderPermission.hasPermission ? 500 : 300)
-                    .animation(.easeInOut, value: folderPermission.hasPermission)
+                .frame(minWidth: folderPermission.hasPermission ? 900 : 500, minHeight: folderPermission.hasPermission ? 500 : 300)
+                .animation(.easeInOut, value: folderPermission.hasPermission)
         }
-                .commands {
-                    CommandGroup(after: .appInfo) {
-                        CheckForUpdatesView(updater: updaterController.updater)
-                    }
-                }
-
+        .commands {
+            CommandGroup(after: .appInfo) {
+                CheckForUpdatesView(updater: updaterController.updater)
+            }
+        }
+        
         Settings {
             SettingsView()
         }

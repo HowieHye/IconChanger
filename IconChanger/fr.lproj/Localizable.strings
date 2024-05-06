@@ -29,3 +29,8 @@
 "Api" = "Api";
 "Query Host: " = "Hôte de requête : ";
 "Finish" = "Terminer";
+"We Need Access to /Applications" = "We Need Access to /Applications";
+"1. A dialog will appear requesting access to /Applications" = "1. A dialog will appear requesting access to /Applications";
+"2. Please choose /Applications and click OK" = "2. Please choose /Applications and click OK";
+"Request Access" = "Request Access";
+"Check for Updates" = "Check for Updates";

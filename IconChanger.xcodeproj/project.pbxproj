@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E0413F22BE3DA6500FE24F5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0413F12BE3DA6500FE24F5 /* main.swift */; };
+		1E283C9C2BE871D1008F84D4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E283C9B2BE871D1008F84D4 /* AboutView.swift */; };
 		1E5056C42BE3DD0000549D26 /* ApplicationAliasSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5056C32BE3DD0000549D26 /* ApplicationAliasSettingsView.swift */; };
 		1E9F295E2BE62173003ABEC9 /* AlgoliaSearchClient in Frameworks */ = {isa = PBXBuildFile; productRef = 1E9F295D2BE62173003ABEC9 /* AlgoliaSearchClient */; };
 		1E9F29602BE63885003ABEC9 /* APISettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F295F2BE63885003ABEC9 /* APISettingsView.swift */; };
@@ -25,7 +26,6 @@
 		900D1CEB281934C7007ABB12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D1CEA281934C7007ABB12 /* ContentView.swift */; };
 		900D1CED281934C8007ABB12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900D1CEC281934C8007ABB12 /* Assets.xcassets */; };
 		900D1CF0281934C8007ABB12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900D1CEF281934C8007ABB12 /* Preview Assets.xcassets */; };
-		900D1CF8281936C7007ABB12 /* FullDiskPermision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D1CF7281936C7007ABB12 /* FullDiskPermision.swift */; };
 		900D1CFA281938D6007ABB12 /* IconList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D1CF9281938D6007ABB12 /* IconList.swift */; };
 		9017B5F8294DBBA9005709C6 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 9017B5F7294DBBA9005709C6 /* Sparkle */; };
 		9017B5FA294ED626005709C6 /* IconRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9017B5F9294ED626005709C6 /* IconRes.swift */; };
@@ -66,6 +66,7 @@
 /* Begin PBXFileReference section */
 		1E0413EF2BE3DA6500FE24F5 /* IconChangerTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = IconChangerTool; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E0413F12BE3DA6500FE24F5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		1E283C9B2BE871D1008F84D4 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		1E5056C22BE3DB7B00549D26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E5056C32BE3DD0000549D26 /* ApplicationAliasSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAliasSettingsView.swift; sourceTree = "<group>"; };
 		1E9F295F2BE63885003ABEC9 /* APISettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISettingsView.swift; sourceTree = "<group>"; };
@@ -86,7 +87,6 @@
 		900D1CEA281934C7007ABB12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		900D1CEC281934C8007ABB12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		900D1CEF281934C8007ABB12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		900D1CF7281936C7007ABB12 /* FullDiskPermision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDiskPermision.swift; sourceTree = "<group>"; };
 		900D1CF9281938D6007ABB12 /* IconList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconList.swift; sourceTree = "<group>"; };
 		9017B5F9294ED626005709C6 /* IconRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconRes.swift; sourceTree = "<group>"; };
 		9017B6192951F090005709C6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -169,6 +169,7 @@
 		68431606A6C8EB7BCAA21DD2 /* SettingsView */ = {
 			isa = PBXGroup;
 			children = (
+				1E283C9B2BE871D1008F84D4 /* AboutView.swift */,
 				1E9F295F2BE63885003ABEC9 /* APISettingsView.swift */,
 				684311E6ADA4C380BC5296B0 /* SettingsView.swift */,
 				1E5056C32BE3DD0000549D26 /* ApplicationAliasSettingsView.swift */,
@@ -214,7 +215,6 @@
 				900D1CEA281934C7007ABB12 /* ContentView.swift */,
 				900D1CEC281934C8007ABB12 /* Assets.xcassets */,
 				900D1CEE281934C8007ABB12 /* Preview Content */,
-				900D1CF7281936C7007ABB12 /* FullDiskPermision.swift */,
 				900D1CF9281938D6007ABB12 /* IconList.swift */,
 				908A78FA2819640800951B15 /* IconManager.swift */,
 				908A79082819840D00951B15 /* ChangeView.swift */,
@@ -396,7 +396,6 @@
 				900D1CFA281938D6007ABB12 /* IconList.swift in Sources */,
 				9053434F286B2A6800237F98 /* AutoUpdater.swift in Sources */,
 				908A79022819753E00951B15 /* String+RangeSubscript.swift in Sources */,
-				900D1CF8281936C7007ABB12 /* FullDiskPermision.swift in Sources */,
 				1E9F29602BE63885003ABEC9 /* APISettingsView.swift in Sources */,
 				908A79092819840D00951B15 /* ChangeView.swift in Sources */,
 				684314A1977FA2DF04BCD0F2 /* LocalImageView.swift in Sources */,
@@ -405,6 +404,7 @@
 				68431CD74AE43807FEA2060C /* AliasName.swift in Sources */,
 				1E5056C42BE3DD0000549D26 /* ApplicationAliasSettingsView.swift in Sources */,
 				684311E1DAA0EE528A75D6B4 /* SetAliasNameView.swift in Sources */,
+				1E283C9C2BE871D1008F84D4 /* AboutView.swift in Sources */,
 				68431F5F90EFAE60C30EF968 /* AliasNameCore.swift in Sources */,
 				684313DDC8758B6A23980300 /* PermissionRequest.swift in Sources */,
 				684319A985908FD7F396A2B9 /* SettingsView.swift in Sources */,
