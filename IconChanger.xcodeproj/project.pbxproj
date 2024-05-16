@@ -10,6 +10,7 @@
 		1E0413F22BE3DA6500FE24F5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0413F12BE3DA6500FE24F5 /* main.swift */; };
 		1E283C9C2BE871D1008F84D4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E283C9B2BE871D1008F84D4 /* AboutView.swift */; };
 		1E5056C42BE3DD0000549D26 /* ApplicationAliasSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5056C32BE3DD0000549D26 /* ApplicationAliasSettingsView.swift */; };
+		1E79318B2BF5F2B000FC8CA9 /* sparkle.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1E79318A2BF5F2B000FC8CA9 /* sparkle.xml */; };
 		1E9F295E2BE62173003ABEC9 /* AlgoliaSearchClient in Frameworks */ = {isa = PBXBuildFile; productRef = 1E9F295D2BE62173003ABEC9 /* AlgoliaSearchClient */; };
 		1E9F29602BE63885003ABEC9 /* APISettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F295F2BE63885003ABEC9 /* APISettingsView.swift */; };
 		684311E1DAA0EE528A75D6B4 /* SetAliasNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684312DDF57DD3F7FD140291 /* SetAliasNameView.swift */; };
@@ -69,6 +70,7 @@
 		1E283C9B2BE871D1008F84D4 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		1E5056C22BE3DB7B00549D26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E5056C32BE3DD0000549D26 /* ApplicationAliasSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAliasSettingsView.swift; sourceTree = "<group>"; };
+		1E79318A2BF5F2B000FC8CA9 /* sparkle.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = sparkle.xml; path = ../sparkle.xml; sourceTree = "<group>"; };
 		1E9F295F2BE63885003ABEC9 /* APISettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISettingsView.swift; sourceTree = "<group>"; };
 		1ED9C43E2BE7172600F51AD8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6843102ECDF4DE9417AD9634 /* LocalImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalImageView.swift; sourceTree = "<group>"; };
@@ -93,7 +95,6 @@
 		9017B61D295282ED005709C6 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9053434D286B2A2900237F98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9053434E286B2A6800237F98 /* AutoUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoUpdater.swift; sourceTree = "<group>"; };
-		90534350286B441900237F98 /* sparkle.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = sparkle.xml; sourceTree = "<group>"; };
 		90534351286C8BDA00237F98 /* fileicon */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fileicon; sourceTree = "<group>"; };
 		9053438A287534C300237F98 /* helper.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = helper.sh; sourceTree = "<group>"; };
 		907AC4F82954038600F9F0F9 /* README-zh.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "README-zh.md"; sourceTree = "<group>"; };
@@ -207,6 +208,7 @@
 		900D1CE7281934C7007ABB12 /* IconChanger */ = {
 			isa = PBXGroup;
 			children = (
+				1E79318A2BF5F2B000FC8CA9 /* sparkle.xml */,
 				9053434E286B2A6800237F98 /* AutoUpdater.swift */,
 				9053434D286B2A2900237F98 /* Info.plist */,
 				90B57C1E286AA62300EE52D3 /* IconChanger.entitlements */,
@@ -225,7 +227,6 @@
 				90534351286C8BDA00237F98 /* fileicon */,
 				90B57C1F286AB90700EE52D3 /* installHelper.sh */,
 				90B57C21286ACBA700EE52D3 /* StringTest.playground */,
-				90534350286B441900237F98 /* sparkle.xml */,
 				9053438A287534C300237F98 /* helper.sh */,
 				9017B5F9294ED626005709C6 /* IconRes.swift */,
 				907AC4FE2955357B00F9F0F9 /* Localizable.strings */,
@@ -364,6 +365,7 @@
 				900D1CF0281934C8007ABB12 /* Preview Assets.xcassets in Resources */,
 				908A7927281A5A4A00951B15 /* README.md in Resources */,
 				9017B61E295282ED005709C6 /* LICENSE in Resources */,
+				1E79318B2BF5F2B000FC8CA9 /* sparkle.xml in Resources */,
 				908A792E281A771800951B15 /* Api.png in Resources */,
 				907AC5012955363800F9F0F9 /* README-fr.md in Resources */,
 				900D1CED281934C8007ABB12 /* Assets.xcassets in Resources */,

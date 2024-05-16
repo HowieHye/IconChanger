@@ -9,8 +9,8 @@
 	<key>SUEnableInstallerLauncherService</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>https://underthestars-zhy.github.io/IconChanger/IconChanger/sparkle.xml</string>
+	<string>https://raw.githubusercontent.com/HowieHye/IconChanger/main/IconChanger/sparkle.xml</string>
 	<key>SUPublicEDKey</key>
-	<string>WaX8A6fbOjG2ryw9va3sfqGtHv2koXeQUs5I+EgYMgw=</string>
+	<string>CboaivQcIwsoUCZ6zw+sclPVzjtTJmHkveHWIthz3Ms=</string>
 </dict>
 </plist>
