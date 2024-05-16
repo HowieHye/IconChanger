@@ -9,7 +9,7 @@ import Foundation
 
 extension URL {
     static var documents: URL {
-        let path = "\(NSHomeDirectory())/.iconchanger/data/helper"
+        let path = "\(NSHomeDirectory())/.config/iconchanger/helper"
         let url = URL(universalFilePath: path)
         if !FileManager.default.fileExists(atPath: path) {
             do {
